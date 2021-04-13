@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts';
 
 import { ChartComponent } from '../shared/components/chart/chart.component';
 
@@ -11,9 +12,11 @@ import { ChartComponent } from '../shared/components/chart/chart.component';
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   exports: [
+    ChartsModule,
     ChartComponent
   ]
 })

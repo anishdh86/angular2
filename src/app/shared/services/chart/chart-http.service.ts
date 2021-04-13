@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Country } from '../../models/country.model';
+import { CovidData } from '../../models/covid-data.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,12 @@ export class ChartHttpService {
   private readonly URL_SEPERATOR = '/';
 
   constructor(private httpClient: HttpClient) { }
+
+  getCovidStatistics(): Observable<any> {
+    return this.httpClient.get(
+      this.API_URL
+    )
+  }
 
   getCountries(): Observable<any> {
     return this.httpClient.get(

@@ -1,3 +1,14 @@
 <div *ngIf="countries$ | async as countries">
-  {{ countries | json }}
+  <ul *ngFor="let country of countries; let i = index">
+    <li>{{ country.name }}</li>
+  </ul>
+</div>
+<div *ngIf="chartData$ | async as chartData">
+  <canvas baseChart
+    [data]="chartData.data"
+    [labels]="chartData.labels"
+    [chartType]="'pie'"
+    [colors]="chartColors"
+    [options]="chartOptions">
+  </canvas>
 </div>
